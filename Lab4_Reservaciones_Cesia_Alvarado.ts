@@ -64,7 +64,7 @@ atenderReservacion(reservaciones);
 console.log("==== BÚSQUEDA DE RESERVACIÓN ====");
 
 let buscada: Reservacion | undefined = reservaciones.find(
-    (r: Reservacion): boolean => r.id === 2
+    (reservacion: Reservacion): boolean => reservacion.id === 2
 );
 
 if (buscada !== undefined) {
@@ -76,7 +76,7 @@ if (buscada !== undefined) {
 
 // Probamos con un identificador que no existe.
 let noEncontrada: Reservacion | undefined = reservaciones.find(
-    (r: Reservacion): boolean => r.id === 7
+    (reservacion: Reservacion): boolean => reservacion.id === 7
 );
 
 if (noEncontrada !== undefined) {
@@ -94,8 +94,8 @@ console.log("Cantidad antes de filtrar:", cantidadAntes);
 
 // Filtramos las reservaciones de Terraza con cinco personas o más.
 let terraza: Reservacion[] = reservaciones.filter(
-    (r: Reservacion): boolean =>
-        r.zona === "Terraza" && r.personas >= 5
+    (reservacion: Reservacion): boolean =>
+        reservacion.zona === "Terraza" && reservacion.personas >= 5
 );
 
 // Mostramos directamente el arreglo filtrado.
