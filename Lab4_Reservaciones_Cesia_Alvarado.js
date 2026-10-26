@@ -43,7 +43,7 @@ console.log("==== ATENCIÓN DE RESERVACIÓN ====");
 atenderReservacion(reservaciones);
 // 4. Buscamos una reservación por su identificador.
 console.log("==== BÚSQUEDA DE RESERVACIÓN ====");
-let buscada = reservaciones.find((r) => r.id === 2);
+let buscada = reservaciones.find((reservacion) => reservacion.id === 2);
 if (buscada !== undefined) {
     console.log("Reservación encontrada:");
     console.log(buscada);
@@ -52,7 +52,7 @@ else {
     console.log("No se encontró la reservación.");
 }
 // Probamos con un identificador que no existe.
-let noEncontrada = reservaciones.find((r) => r.id === 7);
+let noEncontrada = reservaciones.find((reservacion) => reservacion.id === 7);
 if (noEncontrada !== undefined) {
     console.log("Reservación encontrada:");
     console.log(noEncontrada);
@@ -65,7 +65,7 @@ let cantidadAntes = reservaciones.length;
 console.log("==== COMPROBACIÓN DEL FILTRO ====");
 console.log("Cantidad antes de filtrar:", cantidadAntes);
 // Filtramos las reservaciones de Terraza con cinco personas o más.
-let terraza = reservaciones.filter((r) => r.zona === "Terraza" && r.personas >= 5);
+let terraza = reservaciones.filter((reservacion) => reservacion.zona === "Terraza" && reservacion.personas >= 5);
 // Mostramos directamente el arreglo filtrado.
 console.log("==== TERRAZA CON 5 PERSONAS O MÁS ====");
 if (terraza.length > 0) {
